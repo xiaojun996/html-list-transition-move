@@ -11,7 +11,7 @@ document.querySelector('#button').addEventListener('click', () => {
   const oldUl = document.querySelector('#list')
   const oldPosition = getPosition(document.querySelectorAll('li'))
 
-  arr.reverse() // 反转
+  shuffle(arr) // 反转
 
   const newUl = document.createElement('ul')
   newUl.id = 'list'
@@ -63,15 +63,14 @@ function transition() {
 }
 
 function shuffle(array) {
-  const m = array.length
-  let t
-  let i
+  let m = array.length
+  let t = undefined
+  let i = undefined
+
   while (m) {
     i = Math.floor(Math.random() * m--)
     t = array[m]
     array[m] = array[i]
     array[i] = t
   }
-
-  return array
 }
